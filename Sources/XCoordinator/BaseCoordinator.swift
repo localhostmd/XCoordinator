@@ -20,7 +20,7 @@ extension BaseCoordinator {
 /// `NavigationCoordinator`, `TabBarCoordinator`, `ViewCoordinator`, `SplitCoordinator`
 /// and `PageCoordinator`.
 ///
-open class BaseCoordinator<RouteType: Route, TransitionType: TransitionProtocol>: Coordinator {
+open class BaseCoordinator<RouteType: Route, TransitionType: TransitionProtocol>: NSObject, Coordinator {
 
     // MARK: Stored properties
 
@@ -52,6 +52,7 @@ open class BaseCoordinator<RouteType: Route, TransitionType: TransitionProtocol>
     ///
     public init(rootViewController: RootViewController, initialRoute: RouteType?) {
         self.rootViewController = rootViewController
+        super.init()
         initialRoute.map(prepareTransition).map(performTransitionAfterWindowAppeared)
     }
 
@@ -63,6 +64,7 @@ open class BaseCoordinator<RouteType: Route, TransitionType: TransitionProtocol>
     ///
     public init(rootViewController: RootViewController, initialTransition: TransitionType?) {
         self.rootViewController = rootViewController
+        super.init()
         initialTransition.map(performTransitionAfterWindowAppeared)
     }
 
