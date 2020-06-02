@@ -27,7 +27,7 @@ public typealias AnyViewCoordinator<RouteType: Route> = AnyCoordinator<RouteType
 ///     different router abstractions `StrongRouter`, `UnownedRouter` and `WeakRouter`.
 ///     See `AnyTransitionPerformer` to further abstract from RouteType.
 ///
-public class AnyCoordinator<RouteType: Route, TransitionType: TransitionProtocol>: Coordinator {
+public class AnyCoordinator<RouteType: Route, TransitionType: TransitionProtocol>: NSObject, Coordinator {
 
     // MARK: Stored properties
 

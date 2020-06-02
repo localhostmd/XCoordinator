@@ -16,7 +16,7 @@ import UIKit
 /// AnyTransitionPerformer abstracts away any implementation specific details and reduces coordinators to the capabilities
 /// of the `TransitionPerformer` protocol.
 ///
-public class AnyTransitionPerformer<TransitionType: TransitionProtocol>: TransitionPerformer {
+public class AnyTransitionPerformer<TransitionType: TransitionProtocol>: NSObject, TransitionPerformer {
 
     // MARK: Stored properties
 
